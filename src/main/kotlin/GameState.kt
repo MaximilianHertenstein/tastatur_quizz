@@ -1,21 +1,12 @@
 package org.example
 
-class GameState()
-    {
-        var keys: MutableList<String> = mutableListOf("b", "a", "Enter")
-        var lastKey : String= keys.random()
-        var score : Int = 0
-
-        fun reset(){
-            score = 0
-        }
-
-
-        fun update(){
-            lastKey = keys.random()
-        }
-
-        fun incPoints(){
-            score++
-        }
+data class GameState(
+    val lastKey: String = keys.values.random(),
+    val score: Int = 0)
+{
+    fun tryKey(codeOfPressedKey: String): GameState {
+        val nextKey = keys.values.random()
+        val nextScore = if (codeOfPressedKey == keys[lastKey] ) score + 1 else 0
+        return GameState(nextKey, nextScore)
+    }
 }
