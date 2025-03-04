@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/webjars/htmx.org/2.0.4/dist/htmx.min.js"></script>
+
+    </head>
+
+
+
+<body>
+    <div id="anzeige">
+        <h1>Tastatur-Spiel</h1>
+        <h2>Knacke den GHSE-Highscore!</h2>
+        <button hx-get="/tasks" hx-target="#anzeige" hx-swap="innerHTML">Los geht's!</button>
+    </div>
+</body>
+</html>

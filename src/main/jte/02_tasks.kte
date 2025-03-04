@@ -1,0 +1,23 @@
+@param key: String
+@param score: Int
+
+<%--<!DOCTYPE html>--%>
+
+<%--<html>--%>
+<%--<head>--%>
+<%--    <script src="/webjars/htmx.org/2.0.4/dist/htmx.min.js"></script>--%>
+<%--</head>--%>
+
+<%--<body>--%>
+    <h1>Drücke</h1>
+    <p>${key}</p>
+
+    <div hx-get="/keyPressed"  hx-target="#anzeige"  hx-trigger="keyup" hx-vals='js:{key: event.key}' >
+        <input name="someinput" type="text" autofocus style="opacity:0" />
+
+
+    </div>
+    <p>Punkte: ${score} </p>
+
+<%--</body>--%>
+<%--</html>--%>

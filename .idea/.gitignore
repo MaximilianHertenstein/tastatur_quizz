@@ -31,6 +31,8 @@ workspace.xml
 /js/js.translator/testData/out-pir/
 .gradle/
 build/
+/build
+
 !**/src/**/build
 !**/test/**/build
 *.iml
