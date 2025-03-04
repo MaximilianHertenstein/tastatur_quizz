@@ -1,0 +1,17 @@
+@import gg.jte.Content
+
+@param content: Content
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/webjars/htmx.org/2.0.4/dist/htmx.min.js"></script>
+
+</head>
+
+
+
+<body>
+        ${content}
+</body>
+</html>
