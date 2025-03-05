@@ -1,17 +1,22 @@
 package org.example
 
-class Model(private val gameStates: MutableMap<Int, GameState>) {
-    fun addGame() {
+class Model(private val gameStates: MutableMap<String, GameState> = mutableMapOf()) {
 
-        gameStates[gameStates.size] = GameState()
+
+    fun getGame(id:String): GameState {
+        return gameStates[id] ?: addGame(id)
     }
 
-    fun tryKey(gameID: Int, key: String) {
-        val playedGame = gameStates[gameID]
-        if (playedGame != null) {
-            gameStates[gameID] = playedGame.tryKey(key)
+    private fun addGame(id:String): GameState {
+        val newGame = GameState()
+        gameStates[id] = newGame
+        return newGame
+    }
+
+    fun tryKey(gameID: String, key: String): GameState {
+          val nextGame = getGame(gameID).tryKey(key)
+            gameStates[gameID] = nextGame
+            return nextGame
         }
-
-
     }
-}
+
