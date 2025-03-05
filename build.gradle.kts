@@ -20,7 +20,7 @@ dependencies {
 
     implementation("org.webjars.npm:htmx.org:2.0.4")
 
-
+    implementation("org.webjars.npm:fontsource-variable__jetbrains-mono:5.0.6")
 
 }
 

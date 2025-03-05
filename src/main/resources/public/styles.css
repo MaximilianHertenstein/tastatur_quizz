@@ -1,0 +1,15 @@
+h1,
+h2,
+p,
+label,
+input {
+    font-size: 50px;
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+    text-align: center;
+}
+
+html,
+input {
+    background-color: black
+}
