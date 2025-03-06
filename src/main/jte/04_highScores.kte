@@ -1,0 +1,12 @@
+@import org.example.HighScoreItem
+
+
+@param highScoreItems: List<HighScoreItem>
+
+
+<table>
+   <tr> <th>Name </th> <th>Punkte</th> </tr>
+   @for (item in highScoreItems)
+      <tr><td>${item.playerName}</td></tr>
+    @endfor
+</table>
