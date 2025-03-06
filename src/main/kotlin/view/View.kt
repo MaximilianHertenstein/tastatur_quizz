@@ -15,3 +15,7 @@ fun renderTitle(ctx: Context) {
 fun renderHighScores(ctx: Context,highScores: List<HighScoreItem>) {
     ctx.render("04_highScores.kte", mapOf("highScoreItems" to highScores))
 }
+
+fun renderHighScoreForm(ctx: Context, highScore: Int) {
+    ctx.render("05_highscore_form.kte", mapOf("score" to highScore))
+}

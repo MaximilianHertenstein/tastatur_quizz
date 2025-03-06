@@ -21,6 +21,8 @@ fun main() {
 
     app.get("/keyPressed",controller::handlePressedKey)
 
+    app.post("/registerHighScore",controller::registerHighScore)
+
     app.start(7000)
 
 }

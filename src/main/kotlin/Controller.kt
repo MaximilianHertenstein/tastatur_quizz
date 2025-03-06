@@ -2,6 +2,7 @@ package org.example
 
 import io.javalin.http.Context
 import org.example.view.renderGameState
+import org.example.view.renderHighScoreForm
 import org.example.view.renderHighScores
 
 class Controller(private val model: Model = Model())  {
@@ -28,10 +29,28 @@ class Controller(private val model: Model = Model())  {
     fun handlePressedKey(ctx:Context) {
         val (id, gameState) = getSessionGame(ctx)
         val pressedKey = ctx.queryParam("key")
-        val nextGameState = if (pressedKey != null) model.tryKey(id,  pressedKey) else gameState
-        renderGameState(ctx, nextGameState)
+        val (nextGameState,highScore) = if (pressedKey != null) model.tryKey(id,  pressedKey) else Pair(gameState,null)
+
+        if(highScore != null){
+            renderHighScoreForm(ctx, highScore)
+        }
+        else {
+            renderGameState(ctx, nextGameState)
+        }
     }
 
+
+
+    fun registerHighScore(ctx:Context) {
+        val name = ctx.formParam("name")
+        val score = ctx.formParam("score")?.toInt()
+        if (score != null && name != null) {
+            model.updateHighScore(name, score)
+            ctx.redirect("/")
+        }
+
+
+    }
 
     fun showHighScores (ctx:Context) = renderHighScores(ctx, model.getHighScoreList())
 

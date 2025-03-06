@@ -2,7 +2,11 @@ h1,
 h2,
 p,
 label,
-td {
+td,
+input,
+form,
+label,
+button{
     font-size: 50px;
     font-family: 'JetBrains Mono', monospace;
     color: white;

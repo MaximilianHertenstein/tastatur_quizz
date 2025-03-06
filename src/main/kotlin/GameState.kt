@@ -9,4 +9,6 @@ data class GameState(
         val nextScore = if (codeOfPressedKey == keys[lastKey] ) score + 1 else 0
         return GameState(nextKey, nextScore)
     }
+
+
 }
