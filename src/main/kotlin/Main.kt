@@ -17,6 +17,8 @@ fun main() {
 
     app.get("/", ::renderTitle)
 
+    app.get("/highScores", controller::showHighScores)
+
     app.get("/keyPressed",controller::handlePressedKey)
 
     app.start(7000)

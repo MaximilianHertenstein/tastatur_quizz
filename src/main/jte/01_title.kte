@@ -7,7 +7,9 @@
     <p>
         <button hx-get="/keyPressed" hx-target="#anzeige"> Los geht's!</button>
     </p>
-    <p><a href="/highscores"> Highscores</a></p>
+    <p>
+        <button hx-get="/highScores" hx-target="#anzeige"> Highscores</button>
+    </p>
 </div>`
 )
 

@@ -1,6 +1,7 @@
 package org.example
 
-class Model(private val gameStates: MutableMap<String, GameState> = mutableMapOf()) {
+class Model(private val gameStates: MutableMap<String, GameState> = mutableMapOf(),
+    private val highScoreItems:HighScoreBoard = HighScoreBoard()) {
 
 
     fun getGame(id:String): GameState {
@@ -18,5 +19,11 @@ class Model(private val gameStates: MutableMap<String, GameState> = mutableMapOf
             gameStates[gameID] = nextGame
             return nextGame
         }
+
+    fun updateHighScore(name:String, score:Int) {
+        highScoreItems.update(name, score )
+    }
+
+    fun getHighScoreList() = highScoreItems.getHighScoreList()
     }
 
