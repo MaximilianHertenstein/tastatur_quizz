@@ -1,19 +1,10 @@
-h1,
-h2,
-p,
-label,
-td,
-input,
-form,
-label,
-button{
+h1, h2, p, label, td, input, form, label, button {
     font-size: 50px;
     font-family: 'JetBrains Mono', monospace;
     color: white;
     text-align: center;
 }
 
-html,
-input {
-    background-color: black
+html,input {
+    background-color: black;
 }
