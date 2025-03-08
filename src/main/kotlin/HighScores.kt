@@ -12,9 +12,7 @@ fun insertOrdered(highScoreItems: List<HighScoreItem>, toInsert: HighScoreItem):
             inserted = true
         }
         acc = acc + elem
-
     }
-
     return if (inserted) acc else listOf(toInsert) +   acc
 }
 

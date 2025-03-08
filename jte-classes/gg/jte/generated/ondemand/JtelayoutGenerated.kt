@@ -11,7 +11,7 @@ companion object {
 		jteOutput.writeContent("\n")
 		jteOutput.writeContent("\n")
 		jteOutput.writeContent("\n")
-		jteOutput.writeContent("\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <script src=\"/webjars/htmx.org/2.0.4/dist/htmx.min.js\"></script>\n\n</head>\n\n\n\n<body>\n        <div class=\"container\">\n        ")
+		jteOutput.writeContent("\n    <link rel=\"stylesheet\" href=\"styles.css\">\n    <script src=\"/webjars/htmx.org/2.0.4/dist/htmx.min.js\"></script>\n\n</head>\n\n\n\n<body>\n        <div class=\"container\">\n            ")
 		jteOutput.setContext("div", null)
 		jteOutput.writeUserContent(content)
 		jteOutput.writeContent("\n        </div>\n</body>\n</html>")

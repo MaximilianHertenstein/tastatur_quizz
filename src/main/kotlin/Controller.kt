@@ -14,11 +14,10 @@ class Controller(private val model: Model = Model())  {
 
     }
 
-
     private fun getJSessionId(ctx: Context) : String {
         val maybeSessionId = ctx.cookie("JSESSIONID")
         if (maybeSessionId != null) {
-            return   maybeSessionId
+            return maybeSessionId
         }
         else
             ctx.cookie("JSESSIONID", nextSessionID.toString())
@@ -39,8 +38,6 @@ class Controller(private val model: Model = Model())  {
         }
     }
 
-
-
     fun registerHighScore(ctx:Context) {
         val name = ctx.formParam("name")
         val score = ctx.formParam("score")?.toInt()
@@ -48,11 +45,8 @@ class Controller(private val model: Model = Model())  {
             model.updateHighScore(name, score)
             ctx.redirect("/")
         }
-
-
     }
 
     fun showHighScores (ctx:Context) = renderHighScores(ctx, model.getHighScoreList())
-
 
 }

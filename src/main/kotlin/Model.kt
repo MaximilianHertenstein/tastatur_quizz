@@ -3,8 +3,6 @@ package org.example
 class Model(private val gameStates: MutableMap<String, GameState> = mutableMapOf(),
     private val highScoreItems:HighScoreBoard = HighScoreBoard()) {
 
-
-
     fun getGame(id:String): GameState {
         return gameStates[id] ?: addGame(id)
     }
@@ -28,5 +26,6 @@ class Model(private val gameStates: MutableMap<String, GameState> = mutableMapOf
     }
 
     fun getHighScoreList() = highScoreItems.getHighScoreList()
-    }
+
+}
 
